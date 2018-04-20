@@ -212,7 +212,7 @@ class myARIMA(object):
         train, test = self.timeseries[0:train_size], self.timeseries[train_size:]
         
         #Training data
-        self.model = SARIMAX(train, order=(p, d, q),seasonal_order=(P,D,Q,m))
+        self.model = self.model(train, order=(p, d, q),seasonal_order=(P,D,Q,m))
         model_fit = self.model.fit()
         print(model_fit.summary())
         
